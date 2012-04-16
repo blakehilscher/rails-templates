@@ -17,3 +17,5 @@ generate "scss_boilerplate:install -f"
 
 git :add => '.'
 git :commit => '-m "SASS boilerplate"'
+
+shout_finished :stylesheets

@@ -7,4 +7,4 @@ run "bundle update"
 git :add => '.'
 git :commit => '-am "Development Tools"'
 
-shout "Development Tools finished building."
+shout_finished :development

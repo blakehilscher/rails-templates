@@ -18,4 +18,4 @@ rake("db:migrate")
 git :add => '.'
 git :commit => '-m "Devise"'
 
-shout "Devise finished building."
+shout_finished :devise

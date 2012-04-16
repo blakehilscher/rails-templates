@@ -20,3 +20,5 @@ rake("db:migrate")
 
 git :add => '.'
 git :commit => '-m "ckeditor"'
+
+shout_finished :ckeditor

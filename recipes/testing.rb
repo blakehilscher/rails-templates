@@ -21,4 +21,4 @@ generate "pickle --path --email"
 git :add => '.'
 git :commit => '-am "Testing"'
 
-shout "Testing finished building."
+shout_finished :testing

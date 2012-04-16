@@ -21,4 +21,4 @@ append_file 'app/assets/javascripts/application.js',"\n//= require_tree ."
 git :add => '.'
 git :commit => '-m "JS boilerplate"'
 
-shout "JS Boilerplate finished building."
+shout_finished :javascripts

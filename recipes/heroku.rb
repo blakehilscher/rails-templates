@@ -30,3 +30,5 @@ run "cp config/environments/production.rb config/environments/staging.rb"
 
 git :add => '.'
 git :commit => "-a -m 'Configuration for heroku'"
+
+shout_finished :heroku

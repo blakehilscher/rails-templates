@@ -19,3 +19,5 @@ generate "html5:partial --all"
 
 git :add => '.'
 git :commit => '-m "HTML5 boilerplate"'
+
+shout_finished :html5

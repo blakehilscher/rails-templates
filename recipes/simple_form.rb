@@ -13,7 +13,7 @@ run "bundle update"
 # GENERATE #
 ############
 
-generate "simple_form:install -e haml #{'--bootstrap' if @options[:bootstrap]}"
+generate "simple_form:install -e haml #{'--bootstrap' if option(:bootstrap)}"
 generate "show_for:install"
 file "lib/templates/haml/scaffold/show.html.haml", <<-FILE
 = show_for @<%= singular_name %> do |s|
@@ -26,3 +26,5 @@ FILE
 
 git :add => '.'
 git :commit => '-am "Simple Form"'
+
+shout_finished :simple_form
