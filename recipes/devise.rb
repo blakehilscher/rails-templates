@@ -3,7 +3,6 @@
 ##########
 
 gem 'devise'
-gem 'cancan'
 gem 'hpricot', :group => :development
 gem 'ruby_parser', :group => :development
 
@@ -15,7 +14,4 @@ generate "devise User"
 
 rake("db:migrate")
 
-git :add => '.'
-git :commit => '-m "Devise"'
-
-shout_finished :devise
+finished :devise

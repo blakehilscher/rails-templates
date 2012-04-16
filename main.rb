@@ -1,26 +1,10 @@
-# Check prerequisites
-%w{bundler compass haml}.each do |component|
-  unless Gem.available?(component)
-    run "gem install #{component}"
-    Gem.refresh
-    Gem.activate(component)
-  end
-end
-
-#########
-# PATHS #
-#########
-
+# PATHS
 @path_root    = File.expand_path(File.join(File.dirname(__FILE__)))
 @path_recipes = File.join(@path_root, 'recipes')
 @path_templates = File.join(@path_root, 'templates')
 
-
-########
-# LIBS #
-########
-
-require "#{@path_root}/libs/helpers.rb"
+# LIBS
+require File.join(@path_root, "libs/helpers.rb")
 
 
 ###########
@@ -42,7 +26,7 @@ else
 end
 
 #########
-# START #
+# BEGIN #
 #########
 
 # Remove Junk
@@ -50,6 +34,7 @@ run "rm -Rf public/index.html app/assets/images/rails.png public/javascripts/* a
 
 # Base Gemset
 apply "#{@path_root}/gemset.rb"
+apply "#{@path_root}/config.rb"
 
 # Init Git Repository
 git :init

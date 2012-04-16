@@ -18,7 +18,4 @@ inject_javascript_before_require_tree "//= require ckeditor/init"
 
 rake("db:migrate")
 
-git :add => '.'
-git :commit => '-m "ckeditor"'
-
-shout_finished :ckeditor
+finished :ckeditor

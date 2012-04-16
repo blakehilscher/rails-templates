@@ -1,5 +1,5 @@
 # Copy a static file from the template into the new application
-def copy_template_file(*args)
+def copy_template(*args)
   args.each do |path|
     # puts "Installing #{path}...".magenta
     remove_file path
@@ -18,8 +18,14 @@ def inject_javascript_before_require_tree(text)
   end
 end
 
+def finished(key)
+  git :add => '.'
+  git :commit => "-am \"#{key.capitalize}\""
+  shout "#{key.capitalize} finished installing."
+end
+
 def shout_finished(text)
-  shout "#{text.capitalize} finished installing."
+  
 end
 
 def shout(text)

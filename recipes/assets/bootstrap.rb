@@ -15,7 +15,4 @@ run "bundle update"
 prepend_file 'app/assets/stylesheets/application.css.scss', "@import \"bootstrap\";\n\n"
 inject_javascript_before_require_tree "//= require bootstrap"
 
-git :add => '.'
-git :commit => '-m "Twitter Bootstrap"'
-
-shout_finished :bootstrap
+finished :bootstrap

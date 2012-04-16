@@ -18,7 +18,4 @@ run "bundle update"
 generate "cucumber:install --capybara --testunit"
 generate "pickle --path --email"
 
-git :add => '.'
-git :commit => '-am "Testing"'
-
-shout_finished :testing
+finished :testing

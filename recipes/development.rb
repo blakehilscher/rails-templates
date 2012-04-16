@@ -4,7 +4,4 @@ gem "rails3-generators", :group => :development, :git => "https://github.com/neo
 
 run "bundle update"
 
-git :add => '.'
-git :commit => '-am "Development Tools"'
-
-shout_finished :development
+finished :development

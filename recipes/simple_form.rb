@@ -24,7 +24,4 @@ file "lib/templates/haml/scaffold/show.html.haml", <<-FILE
 == \#{link_to 'Edit', edit_<%= singular_name %>_path(@<%= singular_name %>) } | \#{ link_to 'Back', <%= plural_name %>_path }
 FILE
 
-git :add => '.'
-git :commit => '-am "Simple Form"'
-
-shout_finished :simple_form
+finished :simple_form
