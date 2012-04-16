@@ -1,16 +1,26 @@
+# Check prerequisites
+%w{bundler compass haml}.each do |component|
+  unless Gem.available?(component)
+    run "gem install #{component}"
+    Gem.refresh
+    Gem.activate(component)
+  end
+end
+
 #########
 # PATHS #
 #########
 
-@template_root  = File.expand_path(File.join(File.dirname(__FILE__)))
-@recipes        = File.join(@template_root, 'recipes')
+@path_root    = File.expand_path(File.join(File.dirname(__FILE__)))
+@path_recipes = File.join(@path_root, 'recipes')
+@path_templates = File.join(@path_root, 'templates')
 
 
 ########
 # LIBS #
 ########
 
-require "#{@template_root}/libs/helpers.rb"
+require "#{@path_root}/libs/helpers.rb"
 
 
 ###########
@@ -39,7 +49,7 @@ end
 run "rm -Rf public/index.html app/assets/images/rails.png public/javascripts/* app/views/layouts/*"
 
 # Base Gemset
-apply "#{@template_root}/gemset.rb"
+apply "#{@path_root}/gemset.rb"
 
 # Init Git Repository
 git :init
@@ -51,17 +61,17 @@ git :commit => '-am "Initial commit"'
 # RECIPES #
 ###########
 
-apply "#{@recipes}/development.rb"
-apply "#{@recipes}/testing.rb" if option :testing
-apply "#{@recipes}/heroku.rb" if option :heroku
+apply "#{@path_recipes}/development.rb"
+apply "#{@path_recipes}/testing.rb" if option :testing
+apply "#{@path_recipes}/heroku.rb" if option :heroku
 
-apply "#{@recipes}/assets/html5.rb"
-apply "#{@recipes}/assets/javascripts.rb"
-apply "#{@recipes}/assets/stylesheets.rb"
-apply "#{@recipes}/assets/bootstrap.rb" if option :bootstrap
-apply "#{@recipes}/assets/ckeditor.rb" if option :ckeditor
+apply "#{@path_recipes}/assets/html5.rb"
+apply "#{@path_recipes}/assets/javascripts.rb"
+apply "#{@path_recipes}/assets/stylesheets.rb"
+apply "#{@path_recipes}/assets/bootstrap.rb" if option :bootstrap
+apply "#{@path_recipes}/assets/ckeditor.rb" if option :ckeditor
 
-apply "#{@recipes}/simple_form.rb" if option :simple_form
-apply "#{@recipes}/devise.rb" if option :devise
+apply "#{@path_recipes}/simple_form.rb" if option :simple_form
+apply "#{@path_recipes}/devise.rb" if option :devise
 
 puts "Template Built Successfully!"
