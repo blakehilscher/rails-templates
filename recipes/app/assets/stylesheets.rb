@@ -14,5 +14,3 @@ run "bundle update"
 
 # SASS
 generate "scss_boilerplate:install -f"
-
-finished :stylesheets

@@ -27,5 +27,3 @@ EOS
 
 append_file 'config/environments/production.rb', 'Sass::Plugin.options[:never_update] = true'
 run "cp config/environments/production.rb config/environments/staging.rb"
-
-finished :heroku

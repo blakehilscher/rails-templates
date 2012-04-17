@@ -17,5 +17,3 @@ generate "ckeditor:install --orm=active_record --backend=carrierwave"
 inject_javascript_before_require_tree "//= require ckeditor/init"
 
 rake("db:migrate")
-
-finished :ckeditor

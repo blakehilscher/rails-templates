@@ -1,6 +1,6 @@
-########
-# GEMS #
-########
+################
+# DEFAULT GEMS #
+################
 
 gem 'haml-rails'
 gem 'execjs', :group => :assets

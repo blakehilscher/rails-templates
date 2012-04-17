@@ -17,5 +17,3 @@ inject_into_file 'app/assets/javascripts/application.js', :before => "\n//= requ
   "\n//= require hamlcoffee"
 end
 append_file 'app/assets/javascripts/application.js',"\n//= require_tree ."
-
-finished :javascripts

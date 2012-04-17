@@ -13,5 +13,3 @@ run "git clone https://github.com/blakehilscher/devise-haml app/views/devise; rm
 generate "devise User"
 
 rake("db:migrate")
-
-finished :devise

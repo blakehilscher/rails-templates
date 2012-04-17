@@ -17,5 +17,3 @@ run "bundle update"
 
 generate "cucumber:install --capybara --testunit"
 generate "pickle --path --email"
-
-finished :testing
