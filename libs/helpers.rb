@@ -24,10 +24,10 @@ def confirmation(key)
 end
 
 def shout_and_commit(key)
-  message = "Recipe: #{key} added to project."
-  shout message
+  message = "Recipe: #{key}."
   git :add => '.'
   git :commit => "-am \"#{message}\""
+  shout message + ' finished running.'
 end
 
 def shout(text)
