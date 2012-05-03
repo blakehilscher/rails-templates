@@ -27,6 +27,8 @@ recipes_requiring_confirmation = [
   'app/assets/ckeditor', 
   'gems/simple_form', 
   'gems/devise',
+  'app/controllers/admin',
+  'config/rvmrc',
   ]
 
 #################

@@ -1,0 +1,1 @@
+run "rvm --rvmrc --create 1.9.3-p0@#{@app_name}"
