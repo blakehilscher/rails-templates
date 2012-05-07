@@ -1,10 +1,34 @@
+def apply_confirmed_recipes(recipes)
+  return while recipes.blank?
+  recipes.each do |recipe|
+    options = {:name => recipe}
+    options = {:name => recipe.keys[0], :depedant_recipes => Array(recipe.values[0])} if recipe.is_a?(Hash)
+    # apply
+    if confirmed? options[:name]
+      apply_recipe options[:name]
+      apply_confirmed_recipes options[:depedant_recipes]
+    end
+  end
+end
+
 def apply_recipe_with_confirmation(recipe)
-  apply_recipe(recipe) if confirmation(recipe.keyize)
+  apply_recipe(recipe) if confirmed? recipe
 end
 
 def apply_recipe(key)
   apply File.join( @path_recipes, "#{key}.rb" )
   shout_and_commit(key)
+end
+
+def confirm_each_recipe(recipes)
+  return while recipes.blank?
+  recipes.each do |recipe|
+    options = {:name => recipe}
+    options = {:name => recipe.keys[0], :depedant_recipes => Array(recipe.values[0])} if recipe.is_a?(Hash)
+    # confirm
+    ask_for_confirmation options[:name]
+    confirm_each_recipe options[:depedant_recipes] if confirmed? options[:name]
+  end
 end
 
 def ask_for_confirmation(recipe)
@@ -16,11 +40,12 @@ def ask_for(recipe)
   ask("Do you want to install #{recipe}? (y/n)") == "y"
 end
 
+def confirmed?(key)
+  key = key.to_s.keyize
+  !confirmations.has_key?(key) || confirmations[key]
+end
 def confirmations
   @confirmations ||= {}
-end
-def confirmation(key)
-  !confirmations.has_key?(key) || confirmations[key]
 end
 
 def shout_and_commit(key)

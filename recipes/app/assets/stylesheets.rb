@@ -14,3 +14,6 @@ run "bundle update"
 
 # SASS
 generate "scss_boilerplate:install -f"
+
+# remove junk variables
+run 'rm app/assets/stylesheets/_variables.css.scss'

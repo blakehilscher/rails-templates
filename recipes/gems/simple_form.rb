@@ -13,7 +13,7 @@ run "bundle update"
 # GENERATE #
 ############
 
-generate "simple_form:install -e haml #{'--bootstrap' if confirmation('app/assets/bootstrap'.keyize)}"
+generate "simple_form:install -e haml #{'--bootstrap' if confirmed?('app/assets/bootstrap')}"
 generate "show_for:install"
 file "lib/templates/haml/scaffold/show.html.haml", <<-FILE
 = show_for @<%= singular_name %> do |s|
