@@ -1,1 +1,1 @@
-run "rvm --rvmrc --create 1.9.3-p0@#{@app_name}"
+run "echo 'rvm --create use 1.9.3-p0@#{@app_name}' > .rvmrc"

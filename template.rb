@@ -11,6 +11,7 @@ require File.join(@path_root, "load_paths.rb")
 #####################
 
 recipes = [
+  'config/rvmrc',
   'remove_junk',
   'config/application',
   'gems/defaults',
@@ -18,6 +19,8 @@ recipes = [
   'app/assets/html5',
   'app/assets/javascripts',
   'app/assets/stylesheets',
+  'app/controllers/site',
+  'app/helpers/admin',
   ]
   
 recipes_requiring_confirmation = [
@@ -27,8 +30,6 @@ recipes_requiring_confirmation = [
   'app/assets/ckeditor',
   'gems/simple_form', 
   {'gems/devise' => ['app/controllers/admin'] },
-  'app/controllers/pages',
-  'config/rvmrc',
   ]
 
 #################
