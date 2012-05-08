@@ -2,6 +2,7 @@
 # GEMS #
 ########
 
+gem 'compass', :group => :assets
 gem 'compass-rails', :group => :assets
 gem 'compass-h5bp', :group => :assets
 gem 'html5-rails'

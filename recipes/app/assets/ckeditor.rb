@@ -2,7 +2,7 @@
 # GEMS #
 ########
 
-gem "ckeditor", "3.7.0.rc3", :group => :assets 
+gem "ckeditor", "3.7.0.rc3"
 gem "carrierwave"
 gem "mini_magick"
 
