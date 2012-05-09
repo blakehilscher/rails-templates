@@ -2,6 +2,7 @@
 # DEFAULT GEMS #
 ################
 
+gem 'haml'
 gem 'haml-rails'
 gem 'execjs', :group => :assets
 gem 'jquery-rails'

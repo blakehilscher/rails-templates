@@ -2,7 +2,6 @@
 # GEMS #
 ########
 
-gem 'compass-rails', :group => :assets
 gem 'scss-boilerplate-rails', :group => :assets
 
 run "bundle update"

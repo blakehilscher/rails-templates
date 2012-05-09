@@ -1,1 +1,1 @@
-run "echo 'rvm --create use 1.9.3-p0@#{@app_name}' > .rvmrc"
+template "#{@path_templates}/rvmrc.erb", '.rvmrc'
