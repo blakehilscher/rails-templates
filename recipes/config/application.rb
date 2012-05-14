@@ -9,3 +9,5 @@ application  <<-GENERATORS
       g.helper false
     end
 GENERATORS
+
+copy_template "app/helpers/application_helper.rb"

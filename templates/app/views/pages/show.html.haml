@@ -1,0 +1,21 @@
+- if @page.blank?
+  .row.offset2
+    .span9.offset1
+      %h1 404 Error
+      %p We're sorry, the page you've requested could not be found.
+  
+- else
+  - content_for :head_title do
+    = @page.title
+  
+  .row.offset2
+    .span9.span-center
+  
+      .record.page-record
+        .record-title
+          .inner-record-title
+            %h4= @page.title
+      
+        .record-content
+          .inner-record-content
+            = @page.content.html_safe

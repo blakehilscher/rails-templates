@@ -1,0 +1,28 @@
+%header.form
+  .header_form-title
+    %h1 Listing Pages
+
+%table.table.table-striped.table-bordered.collection
+  %thead
+    %tr
+      %th.collection-title Title
+      %th.collection-content Content
+      %th.collection-actions Actions
+  %tbody
+
+    
+    - @pages.each do |page|
+      %tr
+        %td.collection-title
+          .inner-collection-title= link_to page.title, edit_admin_page_path(page)
+        %td.collection-content
+          .inner-collection-content= page.content.html_safe
+        %td.collection-actions
+          .inner-collection-actions
+            = link_to 'Edit', edit_admin_page_path(page), :class => 'btn btn-primary'
+            = link_to 'Destroy', admin_page_path(page), :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger'
+            = link_to "View", "/pages/#{page.slug}", :class => 'btn'
+
+= paginate @pages
+
+= link_to 'New Page', new_admin_page_path, :class => 'btn btn-primary'

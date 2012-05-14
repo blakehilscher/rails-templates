@@ -1,0 +1,19 @@
+%header.form
+  .header_form-title
+    %h1== #{controller.action_name.humanize} Page
+
+= simple_form_for [:admin, @page] do |f|
+  = f.error_notification
+
+  .form-inputs
+    .form-horizontal
+      = f.input :title
+      = f.input :slug, :disabled => true
+      = f.input :is_virtual, :label => '<strong>Hide this page?</strong><br/><small> (Dont show it in the <br/> site navigation.)</small>'
+      
+    .form-vertical
+      = f.input :content, :as => :ckeditor, :input_html => { :toolbar => 'Full' }, :label => false
+
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    = link_to "Back", admin_pages_path, :class => 'btn'

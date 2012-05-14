@@ -1,1 +1,0 @@
-copy_template 'app/helpers/admin_helper.rb'

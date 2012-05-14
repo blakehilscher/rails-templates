@@ -19,8 +19,7 @@ recipes = [
   'app/assets/html5',
   'app/assets/javascripts',
   'app/assets/stylesheets',
-  'app/controllers/site',
-  'app/helpers/admin',
+  'app/controllers/site_controller',
   ]
   
 recipes_requiring_confirmation = [
@@ -29,7 +28,11 @@ recipes_requiring_confirmation = [
   'app/assets/bootstrap',
   'app/assets/ckeditor',
   'gems/simple_form', 
-  {'gems/devise' => ['app/controllers/admin'] },
+  {'gems/devise' => 
+    [
+      'app/controllers/admin_controller',
+      'app/controllers/admin/pages_controller',
+    ]},
   ]
 
 #################
